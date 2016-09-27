@@ -1,0 +1,29 @@
+{
+  "name": "cheukpang/think-slog",
+  "description": "useful debug tool base on socket log",
+  "keywords": [
+    "socketlog",
+    "debug tool",
+    "thinkphp"
+  ],
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "kwan",
+      "email": "303198069@qq.com",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "cheukpang/next-think": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cheukpang\\": "src/Cheukpang"
+    },
+    "files": [
+      "src/functions/slog.php"
+    ]
+  }
+}
