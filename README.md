@@ -14,12 +14,10 @@ npm install -g socketlog-server
 ```
 socketlog-server
 ```
-> debug where you want
+> debug like follow in php where you want
 ```
-<?php
-
-some code...;
-slog('whatever you want');
+    some code...;
+    slog('whatever you want');
 ```
 
 ###### then open chrome dev-tool,you should see debug output in console tab ^_^
