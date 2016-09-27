@@ -22,5 +22,4 @@ some code...;
 slog('whatever you want');
 ```
 
------- 
-then open chrome dev-tool,you should see debug output in console tab ^_^
+###### then open chrome dev-tool,you should see debug output in console tab ^_^
