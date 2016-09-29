@@ -21,9 +21,6 @@
   "autoload": {
     "psr-4": {
       "Cheukpang\\": "src/"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+    }
   }
 }
