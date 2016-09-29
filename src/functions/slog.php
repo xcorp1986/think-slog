@@ -6,7 +6,7 @@
      * @param string $type
      * @param string $css
      * @return bool|mixed
-     * @throws Exception
+     * @throws \Exception
      */
     function slog($log, $type = 'log')
     {
@@ -16,7 +16,7 @@
                 create_function('$matches', 'return strtoupper($matches[1]);'),
                 $type
             );
-            if (method_exists('\Cheukpang\Slog', $type) || in_array($type, Slog::$log_types)) {
+            if (method_exists('\Cheukpang\Slog', $type) || in_array($type, \Cheukpang\Slog::$log_types)) {
                 return call_user_func(['\Cheukpang\Slog', $type], $log);
             }
         }
