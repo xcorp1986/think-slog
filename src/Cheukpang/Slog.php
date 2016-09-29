@@ -5,7 +5,19 @@
      * @see     https://github.com/luofei614/SocketLog
      */
     namespace Cheukpang;
-    
+
+    /**
+     * Class Slog
+     * @package Cheukpang
+     * @method static log($trace_msg)
+     * @method static info($trace_msg)
+     * @method static error($trace_msg)
+     * @method static warn($trace_msg)
+     * @method static table($trace_msg)
+     * @method static group($trace_msg)
+     * @method static groupCollapsed($trace_msg)
+     * @method static alert($trace_msg)
+     */
     class Slog
     {
         public static $start_time = 0;
@@ -420,7 +432,7 @@
         public static function send($host, $message = '', $address = '/')
         {
             $scheme = is_ssl() ? 'https://' : 'http://';
-            $url = $scheme() . $host . ':' . static::$port . $address;
+            $url = $scheme . $host . ':' . static::$port . $address;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, true);
