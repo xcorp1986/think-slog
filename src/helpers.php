@@ -1,5 +1,5 @@
 <?php
-    
+    namespace Cheukpang;
     /**
      * @description socketlog日志工具
      * @param        $log

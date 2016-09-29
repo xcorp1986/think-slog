@@ -20,10 +20,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Cheukpang\\": "src/Cheukpang"
+      "Cheukpang\\": "src/"
     },
     "files": [
-      "src/functions/slog.php"
+      "src/helpers.php"
     ]
   }
 }
