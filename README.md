@@ -6,11 +6,18 @@ useful debug tool base on socket log
 * chrome extension(file 'chrome.crx' in resource folder)
 * additional port 1229 and port 1116 is required,please check your firewall and add it in whitelist
 
+### INSTALL
+* installation is very simply via [composer](https://getcomposer.org/)
+```
+    composer install cheukpang/think-slog --save
+```
+
 ### HOWTO
 > install socketlog-server and run it
 ```
 npm install -g socketlog-server
 ```
+>in windows CMD or Linux Shell
 ```
 socketlog-server
 ```
