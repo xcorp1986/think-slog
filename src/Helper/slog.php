@@ -1,14 +1,13 @@
 <?php
-    namespace Cheukpang;
     /**
      * @description socketlog日志工具
-     * @param        $log
+     * @param string $log
      * @param string $type
      * @param string $css
      * @return bool|mixed
      * @throws \Exception
      */
-    function slog($log, $type = 'log')
+    function slog($log = '', $type = 'log')
     {
         if (is_string($type)) {
             $type = preg_replace_callback(
@@ -22,19 +21,17 @@
         }
         
         if (is_object($type) && 'mysqli' == get_class($type)) {
-            return \Cheukpang\Slog::mysqlilog($log, $type);
+            return \Cheukpang\Slog::mysqliLog($log, $type);
         }
         
-        if (is_resource($type) && ('mysql link' == get_resource_type($type) || 'mysql link persistent' == get_resource_type(
-                    $type
-                ))
+        if (is_resource($type) && ('mysql link' == get_resource_type($type)
+                || 'mysql link persistent' == get_resource_type($type))
         ) {
-            return \Cheukpang\Slog::mysqllog($log, $type);
+            return \Cheukpang\Slog::mysqlLog($log, $type);
         }
-        
         
         if (is_object($type) && 'PDO' == get_class($type)) {
-            return \Cheukpang\Slog::pdolog($log, $type);
+            return \Cheukpang\Slog::pdoLog($log, $type);
         }
         
         throw new \Exception($type . ' is not SocketLog method');
