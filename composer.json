@@ -25,16 +25,12 @@
     "psr-4": {
       "Cheukpang\\": "src/"
     },
-    "files": [
-      "src/Helper/slog.php"
-    ]
+    "files": ["src/helpers.php"]
   },
   "autoload-dev": {
     "psr-4": {
       "Cheukpang\\": "tests/"
     },
-    "files": [
-      "src/Helper/slog.php"
-    ]
+    "files": ["src/helpers.php"]
   }
 }

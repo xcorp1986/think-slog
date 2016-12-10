@@ -35,15 +35,15 @@
         /**
          * @test
          */
-        public function slog()
+        public function slogIsExists()
         {
-            $condition = function_exists('\Cheukpang\Helper\slog');
+            $condition = function_exists('slog');
             $this->assertTrue($condition);
         }
         
         /**
          * @test
-         * @depends slog
+         * @depends slogIsExists
          */
         public function getInstance()
         {
@@ -52,7 +52,7 @@
         
         /**
          * @test
-         * @depends slog
+         * @depends slogIsExists
          */
         public function getConfig()
         {
