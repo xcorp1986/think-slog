@@ -1,9 +1,10 @@
 <?php
+    namespace Cheukpang\Helper;
+    
     /**
      * @description socketlog日志工具
      * @param string $log
      * @param string $type
-     * @param string $css
      * @return bool|mixed
      * @throws \Exception
      */
