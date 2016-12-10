@@ -1,5 +1,9 @@
 # think-slog
+[![Build Status](https://travis-ci.org/xcorp1986/think-slog.svg?branch=master)](https://travis-ci.org/xcorp1986/think-slog)
+
+<p>
 useful debug tool base on socket log
+</p>
 
 
 ### REQUIREMENT
