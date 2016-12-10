@@ -37,7 +37,7 @@
          */
         public function slog()
         {
-            $condition = function_exists('slog');
+            $condition = function_exists('\Cheukpang\Helper\slog');
             $this->assertTrue($condition);
         }
         
