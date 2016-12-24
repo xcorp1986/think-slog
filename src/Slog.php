@@ -69,11 +69,6 @@
                 return false;
             }
             $trace = [];
-            $runtime = round(microtime(true) - $GLOBALS['_beginTime'], 10);
-            $reqs = $runtime > 0 ? number_format(1 / $runtime, 2) : '∞';
-            $time_str = ' [运行时间：' . number_format($runtime, 6) . 's][吞吐率：' . $reqs . 'req/s]';
-            $memory_use = number_format((memory_get_usage() - $GLOBALS['_startUseMems']) / 1024, 2);
-            $memory_str = ' [内存消耗：' . $memory_use . 'kb]';
             $file_load = ' [文件加载：' . count(get_included_files()) . ']';
             
             if (isset($_SERVER['HTTP_HOST'])) {
@@ -84,7 +79,7 @@
             // 基本信息
             $trace[] = [
                 'type' => 'group',
-                'msg'  => $current_uri . $time_str . $memory_str . $file_load,
+                'msg'  => $current_uri . $file_load,
                 'css'  => $this->css['page'],
             ];
             
