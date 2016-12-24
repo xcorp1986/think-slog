@@ -24,17 +24,17 @@
   "autoload": {
     "psr-4": {
       "Cheukpang\\": "src/"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
       "Cheukpang\\": "tests/"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+    }
+  },
+  "scripts": {
+    "test": [
+      "@phpunit"
+    ],
+    "phpunit": "php vendor/bin/phpunit --verbose"
   }
 }
