@@ -7,7 +7,7 @@
     namespace Cheukpang;
     
     /**
-     * Class Slog
+     * Class Socket
      * @package Cheukpang
      * @method static log($trace_msg)
      * @method static info($trace_msg)

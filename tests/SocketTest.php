@@ -4,7 +4,7 @@
     
     use PHPUnit\Framework\TestCase;
     
-    class SlogTest extends TestCase
+    class SocketTest extends TestCase
     {
         
         //chrome带有tabid和client_id的响应
