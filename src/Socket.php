@@ -9,23 +9,15 @@
     /**
      * Class Socket
      * @package Cheukpang
-     * @method static log($trace_msg)
-     * @method static info($trace_msg)
-     * @method static error($trace_msg)
-     * @method static warn($trace_msg)
-     * @method static table($trace_msg)
-     * @method static group($trace_msg)
-     * @method static groupCollapsed($trace_msg)
-     * @method static alert($trace_msg)
      */
     class Socket
     {
-        //SocketLog 服务的http的端口号
-        public $port = 1116;
         
         protected $config = [
             // socket服务器地址 需要完整的FQDN
             'host'                => 'http://localhost',
+            //SocketLog 服务的http的端口号
+            'port'                => 1116,
             // 是否显示加载的文件列表
             'show_included_files' => false,
             // 日志强制记录到配置的client_id
@@ -41,8 +33,10 @@
             'page'     => 'color:#40e2ff;background:#171717;',
             'big'      => 'font-size:20px;color:red;',
         ];
-        
-        //配置强制推送且被授权的client_id
+    
+        /**
+         * @var array $allowForceClientIds 配置强制推送且被授权的client_id
+         */
         protected $allowForceClientIds = [];
         
         /**
@@ -150,7 +144,6 @@
         
         /**
          * 发送给指定客户端
-         * @author Zjmainstay
          * @param $tabid
          * @param $client_id
          * @param $logs
@@ -169,7 +162,10 @@
             $address = '/' . $client_id;
             $this->send($this->config['host'], $msg, $address);
         }
-        
+    
+        /**
+         * @return bool
+         */
         protected function check()
         {
             $tabid = $this->getClientArg('tabid');
@@ -196,7 +192,11 @@
             
             return true;
         }
-        
+    
+        /**
+         * @param $name
+         * @return mixed|null
+         */
         protected function getClientArg($name)
         {
             static $args = [];
@@ -233,7 +233,7 @@
          */
         protected function send($host, $message = '', $address = '/')
         {
-            $url = $host . ':' . $this->port . $address;
+            $url = $host . ':' . $this->config['port'] . $address;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, true);
