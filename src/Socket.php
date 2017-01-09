@@ -113,21 +113,20 @@
                 'force_client_id' => $client_id,
                 'logs'            => $logs,
             ];
-            $msg = json_encode($logs);
+            $message = json_encode($logs);
             //将client_id作为地址， server端通过地址判断将日志发布给谁
             $address = '/' . $client_id;
-            $this->send($this->config['host'], $msg, $address);
+            $this->send($message, $address);
         }
         
         /**
-         * @param string $host    - $host of socket server
-         * @param string $message - 发送的消息
+         * @param string $message - 发送的消息json_encode后的字符串
          * @param string $address - 地址
          * @return void
          */
-        private function send($host, $message = '', $address = '/')
+        private function send($message = '', $address = '/')
         {
-            $url = $host . ':' . $this->config['port'] . $address;
+            $url = $this->config['host'] . ':' . $this->config['port'] . $address;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, true);
